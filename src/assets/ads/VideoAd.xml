@@ -9,8 +9,8 @@
                 <Creative AdID="20682336">
                     <Linear>
                         <Duration>00:00:07</Duration>
-                        <ClickThrough id="CNX">
-                            <![CDATA[ https://www.connatix.com ]]>
+                        <ClickThrough id="example">
+                            <![CDATA[ https://www.example.com ]]>
                         </ClickThrough>
                         <MediaFiles>
                             <MediaFile
@@ -22,7 +22,7 @@
                                 scalable="true"
                                 maintainAspectRatio="true"
                             >
-                                https://connatix-devops.s3.amazonaws.com/feature-branching/automation/ThirdPartyVastVideo.mp4
+                                assets/bunny.mp4
                             </MediaFile>
                         </MediaFiles>
                     </Linear>

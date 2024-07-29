@@ -1,6 +1,8 @@
-export const VPAID_AD_URL = 'http://rtr.innovid.com/r1.57ebf098e82109.85834506;cb=__CB__';
-export const VIDEO_AD_URL =
-    'https://assets.connatix.com/Elements/29cf9ad9-2fab-4ace-a5c8-d37d0242f38d/VastAdTag.xml';
+import VPAID_AD_URL from 'assets/ads/vpaidAd.xml';
+import VIDEO_AD_URL from 'assets/ads/videoAd.xml';
+
+export { VPAID_AD_URL, VIDEO_AD_URL };
+
 export const IMA_AD_URL =
     'https://pubads.g.doubleclick.net/gampad/ads?' +
     'iu=/21775744923/external/single_ad_samples&sz=640x480&' +
