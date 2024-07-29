@@ -1,4 +1,4 @@
-import 'css/main.scss';
+import 'styles/main.scss';
 import { html } from 'utils/generalUtils';
 import { IWindowWithPlayerInitialization } from 'interfaces/IWindowWithPlayerInitialization';
 import { isNull } from 'utils/typeUtils';

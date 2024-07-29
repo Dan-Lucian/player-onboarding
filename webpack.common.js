@@ -2,10 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    context: path.join(__dirname, 'app'),
+    context: path.join(__dirname, 'src'),
     entry: {
-        player: './App.ts',
-        init: './init.ts'
+        player: './app.ts',
+        index: './index.ts'
     },
     module: {
         rules: [
@@ -16,31 +16,52 @@ module.exports = {
             },
             {
                 test: /\.(scss|css)$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            implementation: require('sass')
+                        }
+                    }
+                ]
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif|mp4|bmp|m3u8)$/i,
                 type: 'asset/resource'
             },
             {
+                // Used for streaming chunks, since they also end in .ts
                 test: /\.ts$/,
                 type: 'asset/resource',
                 include: /assets/
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: 'html-loader',
+                        options: {
+                            minimize: true
+                        }
+                    }
+                ]
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Production',
-            template: path.resolve(__dirname, 'app/index.html'),
+            template: path.resolve(__dirname, 'src/index.html'),
             inject: 'body'
         })
     ],
     resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        modules: [
-          path.resolve('./node_modules'),
-          path.resolve('./app')
-        ]
+        alias: {
+            styles: path.resolve(__dirname, 'src/styles')
+        },
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss'],
+        modules: [path.resolve('./node_modules'), path.resolve('./src')]
     }
 };

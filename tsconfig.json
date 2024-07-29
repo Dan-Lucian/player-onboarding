@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "baseUrl": "./app",
+        "baseUrl": "./src",
         "strict": true,
         "noImplicitAny": true,
         "module": "es6",
@@ -13,5 +13,5 @@
         "lib": ["es2019", "dom", "dom.iterable"]
     },
     "moduleDirectories": ["node_modules", "assets"],
-    "exclude": ["./node_modules", "./app/assets", "./dist"]
+    "exclude": ["./node_modules", "./src/assets", "./dist"]
 }
